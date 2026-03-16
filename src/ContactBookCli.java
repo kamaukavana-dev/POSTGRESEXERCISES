@@ -24,19 +24,7 @@ public class ContactBookCli {
         }
     }
 
-    public void listContacts() throws SQLException {
-        String sql = "SELECT id, name, email, phone FROM contacts ORDER BY name";
-        try (Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-            while (rs.next()) {
-                System.out.printf("%d | %s | %s | %s%n",
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("email"),
-                        rs.getString("phone"));
-            }
-        }
-    }
+
 
 
 
