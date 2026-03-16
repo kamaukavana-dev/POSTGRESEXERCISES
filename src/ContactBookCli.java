@@ -70,17 +70,6 @@ public class ContactBookCli {
         }
     }
 
-    public void deleteContact(int id) throws SQLException {
-        String sql = "DELETE FROM contacts WHERE id = ?";
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setInt(1, id);
-            int rows = stmt.executeUpdate();
-            if (rows > 0) {
-                System.out.println("Contact deleted successfully!");
-            } else {
-                System.out.println("Contact not found.");
-            }
-        }
-    }
+
 
 
