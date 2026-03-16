@@ -38,23 +38,6 @@ public class ContactBookCli {
         }
     }
 
-    public void searchContact(String keyword) throws SQLException {
-        String sql = "SELECT id, name, email, phone FROM contacts WHERE name ILIKE ?";
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, "%" + keyword + "%");
-            ResultSet rs = stmt.executeQuery();
-            if (!rs.isBeforeFirst()) {
-                System.out.println("No contacts found.");
-            }
-            while (rs.next()) {
-                System.out.printf("%d | %s | %s | %s%n",
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("email"),
-                        rs.getString("phone"));
-            }
-        }
-    }
 
 
 
