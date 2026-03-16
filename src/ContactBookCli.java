@@ -56,19 +56,7 @@ public class ContactBookCli {
         }
     }
 
-    public void updateContact(int id, String newPhone) throws SQLException {
-        String sql = "UPDATE contacts SET phone = ? WHERE id = ?";
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, newPhone);
-            stmt.setInt(2, id);
-            int rows = stmt.executeUpdate();
-            if (rows > 0) {
-                System.out.println("Contact updated successfully!");
-            } else {
-                System.out.println("Contact not found.");
-            }
-        }
-    }
+
 
 
 
