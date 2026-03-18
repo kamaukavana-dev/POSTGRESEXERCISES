@@ -68,19 +68,4 @@ public class TaskManager {
                                     rs.getDate("deadline"));
                         }
                     }
-                } else if (choice.equals("5")) {
-                    System.out.print("Task ID to mark done: ");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    String sql = "UPDATE tasks SET status = 'done' WHERE id = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, id);
-                        int rows = stmt.executeUpdate();
-                        if (rows > 0) {
-                            System.out.println("Task marked as done!");
-                        } else {
-                            System.out.println("Task not found.");
-                        }
-                    }
-                } else if (choice.equals("6")) {
-    }
-}
+
