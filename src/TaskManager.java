@@ -33,27 +33,4 @@ public class TaskManager {
                         stmt.setDate(2, Date.valueOf(deadline));
                         stmt.executeUpdate();
                         System.out.println("Task added!");
-                    }
-                } else if (choice.equals("2")) {
-                    String sql = "SELECT id, title, status, deadline FROM tasks ORDER BY created_at DESC";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("title"),
-                                    rs.getString("status"),
-                                    rs.getDate("deadline"));
-                        }
-                    }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT id, title, deadline FROM tasks WHERE status = 'pending' ORDER BY deadline ASC";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("title"),
-                                    rs.getDate("deadline"));
-                        }
 
