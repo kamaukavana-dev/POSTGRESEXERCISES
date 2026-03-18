@@ -56,16 +56,4 @@ public class TaskManager {
                                     rs.getString("title"),
                                     rs.getDate("deadline"));
                         }
-                    }
-                } else if (choice.equals("4")) {
-                    String sql = "SELECT id, title, deadline FROM tasks ORDER BY deadline ASC LIMIT 5";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("title"),
-                                    rs.getDate("deadline"));
-                        }
-                    }
 
