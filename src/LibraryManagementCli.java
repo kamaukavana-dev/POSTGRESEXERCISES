@@ -58,16 +58,4 @@ public class LibraryManagementCli {
                                     rs.getInt("published_year"));
                         }
                     }
-                } else if (choice.equals("4")) {
-                    System.out.print("Author ID to delete: ");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    String sql = "DELETE FROM authors WHERE id = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, id);
-                        int rows = stmt.executeUpdate();
-                        if (rows > 0) {
-                            System.out.println("Author deleted (books removed too).");
-                        } else {
-                            System.out.println("Author not found.");
-                        }
-                    }
+
