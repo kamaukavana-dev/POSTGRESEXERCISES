@@ -46,14 +46,4 @@ public class ExpenseTrackerCli {
                                     rs.getDate("expense_date"));
                         }
                     }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT category, SUM(amount) AS total_spent FROM expenses GROUP BY category";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | Total: %.2f%n",
-                                    rs.getString("category"),
-                                    rs.getDouble("total_spent"));
-                        }
-                    }
 
