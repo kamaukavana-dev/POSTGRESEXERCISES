@@ -56,14 +56,4 @@ public class ExpenseTrackerCli {
                                     rs.getDouble("total_spent"));
                         }
                     }
-                } else if (choice.equals("4")) {
-                    String sql = "SELECT category, AVG(amount) AS avg_spent FROM expenses GROUP BY category";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | Average: %.2f%n",
-                                    rs.getString("category"),
-                                    rs.getDouble("avg_spent"));
-                        }
-                    }
 
