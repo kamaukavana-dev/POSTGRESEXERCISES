@@ -10,28 +10,4 @@ public class ExpenseTrackerCli {
         try (Connection conn = DriverManager.getConnection(url, user, password);
              Scanner scanner = new Scanner(System.in)) {
 
-            while (true) {
-                System.out.println("\n--- ExpenseTrackerCLI ---");
-                System.out.println("1. Add Expense");
-                System.out.println("2. List All Expenses");
-                System.out.println("3. Show Total per Category");
-                System.out.println("4. Show Average per Category");
-                System.out.println("5. Show Monthly Totals");
-                System.out.println("6. Exit");
-                System.out.print("Choose: ");
-                String choice = scanner.nextLine();
-
-                if (choice.equals("1")) {
-                    System.out.print("Category: ");
-                    String category = scanner.nextLine();
-                    System.out.print("Amount: ");
-                    double amount = Double.parseDouble(scanner.nextLine());
-
-                    String sql = "INSERT INTO expenses (category, amount) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, category);
-                        stmt.setDouble(2, amount);
-                        stmt.executeUpdate();
-                        System.out.println("Expense added!");
-                    }
 
