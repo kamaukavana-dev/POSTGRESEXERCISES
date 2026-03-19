@@ -29,33 +29,4 @@ public class LibraryManagementCli {
                         stmt.executeUpdate();
                         System.out.println("Author added!");
                     }
-                } else if (choice.equals("2")) {
-                    System.out.print("Book title: ");
-                    String title = scanner.nextLine();
-                    System.out.print("Author ID: ");
-                    int authorId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Published year: ");
-                    int year = Integer.parseInt(scanner.nextLine());
-
-                    String sql = "INSERT INTO books (title, author_id, published_year) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, title);
-                        stmt.setInt(2, authorId);
-                        stmt.setInt(3, year);
-                        stmt.executeUpdate();
-                        System.out.println("Book added!");
-                    }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT b.id, b.title, a.name, b.published_year " +
-                                 "FROM books b JOIN authors a ON b.author_id = a.id ORDER BY b.title";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s | %d%n",
-                                    rs.getInt("id"),
-                                    rs.getString("title"),
-                                    rs.getString("name"),
-                                    rs.getInt("published_year"));
-                        }
-                    }
 
