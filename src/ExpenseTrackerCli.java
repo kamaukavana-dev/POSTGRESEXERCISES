@@ -34,16 +34,4 @@ public class ExpenseTrackerCli {
                         stmt.executeUpdate();
                         System.out.println("Expense added!");
                     }
-                } else if (choice.equals("2")) {
-                    String sql = "SELECT id, category, amount, expense_date FROM expenses ORDER BY expense_date DESC";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %.2f | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("category"),
-                                    rs.getDouble("amount"),
-                                    rs.getDate("expense_date"));
-                        }
-                    }
 
