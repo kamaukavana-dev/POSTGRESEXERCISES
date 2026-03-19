@@ -71,15 +71,3 @@ public class LibraryManagementCli {
                             System.out.println("Author not found.");
                         }
                     }
-                } else if (choice.equals("5")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
-        } catch (SQLException e) {
-            System.out.println("Database error: " + e.getMessage());
-        }
-    }
-}
