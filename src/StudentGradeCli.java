@@ -70,14 +70,5 @@ public class StudentGradesCLI {
                                     rs.getDouble("score"));
                         }
                     }
-                } else if (choice.equals("5")) {
-                    String sql = "SELECT DISTINCT s.name " +
-                                 "FROM students s WHERE EXISTS " +
-                                 "(SELECT 1 FROM grades g WHERE g.student_id = s.id AND g.score < 50)";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s%n", rs.getString("name"));
-                        }
-                    }
+
 
