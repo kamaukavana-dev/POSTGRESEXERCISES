@@ -57,18 +57,6 @@ public class StudentGradesCLI {
                                     rs.getDouble("score"));
                         }
                     }
-                } else if (choice.equals("4")) {
-                    String sql = "SELECT s.name, g.subject, g.score " +
-                                 "FROM students s JOIN grades g ON s.id = g.student_id " +
-                                 "WHERE g.score > (SELECT AVG(score) FROM grades)";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | %s | %.2f%n",
-                                    rs.getString("name"),
-                                    rs.getString("subject"),
-                                    rs.getDouble("score"));
-                        }
-                    }
+
 
 
