@@ -80,15 +80,4 @@ public class StudentGradesCLI {
                             System.out.printf("%s%n", rs.getString("name"));
                         }
                     }
-                } else if (choice.equals("6")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
-        } catch (SQLException e) {
-            System.out.println("Database error: " + e.getMessage());
-        }
-    }
-}
+
