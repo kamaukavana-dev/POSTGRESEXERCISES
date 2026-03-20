@@ -30,13 +30,7 @@ public class StudentGradesCLI {
                         stmt.executeUpdate();
                         System.out.println("Student added!");
                     }
-                } else if (choice.equals("2")) {
-                    System.out.print("Student ID: ");
-                    int studentId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Subject: ");
-                    String subject = scanner.nextLine();
-                    System.out.print("Score: ");
-                    double score = Double.parseDouble(scanner.nextLine());
+
 
 
 
