@@ -69,23 +69,4 @@ public class MovieRatingsCLI {
                                  "FROM movies) ranked WHERE row_num <= 3 ORDER BY genre, row_num";
                     try (Statement stmt = conn.createStatement();
                          ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | %s | %.1f | Top %d%n",
-                                    rs.getString("title"),
-                                    rs.getString("genre"),
-                                    rs.getDouble("rating"),
-                                    rs.getInt("row_num"));
-                        }
-                    }
-                } else if (choice.equals("5")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
-        } catch (SQLException e) {
-            System.out.println("Database error: " + e.getMessage());
-        }
-    }
-}
+
