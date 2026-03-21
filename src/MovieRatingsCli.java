@@ -36,17 +36,6 @@ public class MovieRatingsCLI {
                         stmt.executeUpdate();
                         System.out.println("Movie added!");
                     }
-                } else if (choice.equals("2")) {
-                    String sql = "SELECT id, title, genre, rating FROM movies ORDER BY genre, rating DESC";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s | %.1f%n",
-                                    rs.getInt("id"),
-                                    rs.getString("title"),
-                                    rs.getString("genre"),
-                                    rs.getDouble("rating"));
-                        }
-                    }
+
 
 
