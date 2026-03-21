@@ -48,25 +48,5 @@ public class MovieRatingsCLI {
                                     rs.getDouble("rating"));
                         }
                     }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT title, genre, rating, " +
-                                 "RANK() OVER (PARTITION BY genre ORDER BY rating DESC) AS rank " +
-                                 "FROM movies ORDER BY genre, rank";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | %s | %.1f | Rank: %d%n",
-                                    rs.getString("title"),
-                                    rs.getString("genre"),
-                                    rs.getDouble("rating"),
-                                    rs.getInt("rank"));
-                        }
-                    }
-                } else if (choice.equals("4")) {
-                    String sql = "SELECT * FROM (" +
-                                 "SELECT title, genre, rating, " +
-                                 "ROW_NUMBER() OVER (PARTITION BY genre ORDER BY rating DESC) AS row_num " +
-                                 "FROM movies) ranked WHERE row_num <= 3 ORDER BY genre, row_num";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
+
 
