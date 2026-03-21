@@ -20,22 +20,7 @@ public class MovieRatingsCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Title: ");
-                    String title = scanner.nextLine();
-                    System.out.print("Genre: ");
-                    String genre = scanner.nextLine();
-                    System.out.print("Rating (0–10): ");
-                    double rating = Double.parseDouble(scanner.nextLine());
 
-                    String sql = "INSERT INTO movies (title, genre, rating) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, title);
-                        stmt.setString(2, genre);
-                        stmt.setDouble(3, rating);
-                        stmt.executeUpdate();
-                        System.out.println("Movie added!");
-                    }
 
 
 
