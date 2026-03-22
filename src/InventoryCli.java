@@ -12,33 +12,7 @@ public class InventoryCLI {
 
             conn.setAutoCommit(false); // we’ll control transactions manually
 
-            while (true) {
-                System.out.println("\n--- InventoryCLI ---");
-                System.out.println("1. Add Product");
-                System.out.println("2. List Inventory");
-                System.out.println("3. Update Stock (Commit)");
-                System.out.println("4. Update Stock (Rollback)");
-                System.out.println("5. Exit");
-                System.out.print("Choose: ");
-                String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Product name: ");
-                    String product = scanner.nextLine();
-                    System.out.print("Quantity: ");
-                    int qty = Integer.parseInt(scanner.nextLine());
-
-                    String sql = "INSERT INTO inventory (product, quantity) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, product);
-                        stmt.setInt(2, qty);
-                        stmt.executeUpdate();
-                        conn.commit();
-                        System.out.println("Product added!");
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-                    }
 
 
 
