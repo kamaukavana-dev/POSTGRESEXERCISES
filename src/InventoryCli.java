@@ -73,15 +73,4 @@ public class InventoryCLI {
                     System.out.print("Quantity change (+/-): ");
                     int change = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "UPDATE inventory SET quantity = quantity + ? WHERE id = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, change);
-                        stmt.setInt(2, id);
-                        stmt.executeUpdate();
-                        System.out.println("Update executed, but rolling back...");
-                        conn.rollback();
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-   }
-}
+
