@@ -39,22 +39,7 @@ public class InventoryCLI {
                         conn.rollback();
                         System.out.println("Error: " + e.getMessage());
                     }
-                } else if (choice.equals("2")) {
-                    String sql = "SELECT id, product, quantity FROM inventory ORDER BY product";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %d%n",
-                                    rs.getInt("id"),
-                                    rs.getString("product"),
-                                    rs.getInt("quantity"));
-                        }
-                    }
-                } else if (choice.equals("3")) {
-                    System.out.print("Product ID: ");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Quantity change (+/-): ");
-                    int change = Integer.parseInt(scanner.nextLine());
+
 
 
 
