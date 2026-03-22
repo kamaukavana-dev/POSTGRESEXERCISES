@@ -56,21 +56,6 @@ public class InventoryCLI {
                     System.out.print("Quantity change (+/-): ");
                     int change = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "UPDATE inventory SET quantity = quantity + ? WHERE id = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, change);
-                        stmt.setInt(2, id);
-                        stmt.executeUpdate();
-                        conn.commit();
-                        System.out.println("Stock updated and committed!");
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-                    }
-                } else if (choice.equals("4")) {
-                    System.out.print("Product ID: ");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Quantity change (+/-): ");
-                    int change = Integer.parseInt(scanner.nextLine());
+
 
 
