@@ -10,35 +10,5 @@ public class BlogCLI {
         try (Connection conn = DriverManager.getConnection(url, user, password);
              Scanner scanner = new Scanner(System.in)) {
 
-            while (true) {
-                System.out.println("\n--- BlogCLI ---");
-                System.out.println("1. Add Blog Post");
-                System.out.println("2. List All Posts");
-                System.out.println("3. Search Posts by Keyword");
-                System.out.println("4. Filter Posts by Author");
-                System.out.println("5. Exit");
-                System.out.print("Choose: ");
-                String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Title: ");
-                    String title = scanner.nextLine();
-                    System.out.print("Content: ");
-                    String content = scanner.nextLine();
-                    System.out.print("Author: ");
-                    String author = scanner.nextLine();
-                    System.out.print("Tags (comma separated): ");
-                    String tags = scanner.nextLine();
-
-                    String metadata = String.format("{\"tags\":[\"%s\"],\"author\":\"%s\"}",
-                            tags.replace(",", "\",\""), author);
-
-                    String sql = "INSERT INTO blog_posts (title, content, metadata) VALUES (?, ?, ?::jsonb)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, title);
-                        stmt.setString(2, content);
-                        stmt.setString(3, metadata);
-                        stmt.executeUpdate();
-                        System.out.println("Blog post added!");
-                    }
 
