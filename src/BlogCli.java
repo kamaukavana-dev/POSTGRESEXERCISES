@@ -78,17 +78,4 @@ public class BlogCLI {
                             System.out.printf("%d | %s%n",
                                     rs.getInt("id"),
                                     rs.getString("title"));
-                        }
-                    }
-                } else if (choice.equals("5")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
-        } catch (SQLException e) {
-            System.out.println("Database error: " + e.getMessage());
-        }
-    }
-}
+
