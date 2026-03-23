@@ -53,29 +53,3 @@ public class BlogCLI {
                                     rs.getTimestamp("created_at"));
                         }
                     }
-                } else if (choice.equals("3")) {
-                    System.out.print("Keyword to search: ");
-                    String keyword = scanner.nextLine();
-                    String sql = "SELECT id, title FROM blog_posts " +
-                                 "WHERE to_tsvector('english', content) @@ to_tsquery(?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, keyword);
-                        ResultSet rs = stmt.executeQuery();
-                        while (rs.next()) {
-                            System.out.printf("%d | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("title"));
-                        }
-                    }
-                } else if (choice.equals("4")) {
-                    System.out.print("Author name: ");
-                    String author = scanner.nextLine();
-                    String sql = "SELECT id, title FROM blog_posts WHERE metadata->>'author' = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, author);
-                        ResultSet rs = stmt.executeQuery();
-                        while (rs.next()) {
-                            System.out.printf("%d | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("title"));
-
