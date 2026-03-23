@@ -41,15 +41,4 @@ public class BlogCLI {
                         stmt.executeUpdate();
                         System.out.println("Blog post added!");
                     }
-                } else if (choice.equals("2")) {
-                    String sql = "SELECT id, title, metadata, created_at FROM blog_posts ORDER BY created_at DESC";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("title"),
-                                    rs.getString("metadata"),
-                                    rs.getTimestamp("created_at"));
-                        }
-                    }
+
