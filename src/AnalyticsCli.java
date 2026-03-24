@@ -19,24 +19,7 @@ public class AnalyticsCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Employee name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Manager ID (or blank for none): ");
-                    String managerInput = scanner.nextLine();
-                    Integer managerId = managerInput.isEmpty() ? null : Integer.parseInt(managerInput);
 
-                    String sql = "INSERT INTO employees (name, manager_id) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, name);
-                        if (managerId == null) {
-                            stmt.setNull(2, Types.INTEGER);
-                        } else {
-                            stmt.setInt(2, managerId);
-                        }
-                        stmt.executeUpdate();
-                        System.out.println("Employee added!");
-                    }
 
 
 
