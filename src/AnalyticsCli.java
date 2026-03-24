@@ -1,7 +1,7 @@
 import java.sql.*;
 import java.util.Scanner;
 
-public class AnalyticsCLI {
+public class AnalyticsCli{
     public static void main(String[] args) {
         String url = "jdbc:postgresql://localhost:5432/contactdb"; // use your DB
         String user = "postgres";
@@ -19,7 +19,61 @@ public class AnalyticsCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
+                if (choice.equals("1")) {
+                    System.out.print("Employee name: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Manager ID (or blank for none): ");
+                    String managerInput = scanner.nextLine();
+                    Integer managerId = managerInput.isEmpty() ? null : Integer.parseInt(managerInput);
 
-
-
-
+                    String sql = "INSERT INTO employees (name, manager_id) VALUES (?, ?)";
+                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                        stmt.setString(1, name);
+                        if (managerId == null) {
+                            stmt.setNull(2, Types.INTEGER);
+                        } else {
+                            stmt.setInt(2, managerId);
+                        }
+                        stmt.executeUpdate();
+                        System.out.println("Employee added!");
+                    }
+                } else if (choice.equals("2")) {
+                    String sql = "SELECT id, name, manager_id FROM employees ORDER BY id";
+                    try (Statement stmt = conn.createStatement();
+                         ResultSet rs = stmt.executeQuery(sql)) {
+                        while (rs.next()) {
+                            System.out.printf("%d | %s | Manager: %s%n",
+                                    rs.getInt("id"),
+                                    rs.getString("name"),
+                                    rs.getObject("manager_id"));
+                        }
+                    }
+                } else if (choice.equals("3")) {
+                    String sql = "WITH RECURSIVE employee_hierarchy AS (" +
+                                 "SELECT id, name, manager_id, 1 AS level " +
+                                 "FROM employees WHERE manager_id IS NULL " +
+                                 "UNION ALL " +
+                                 "SELECT e.id, e.name, e.manager_id, eh.level + 1 " +
+                                 "FROM employees e JOIN employee_hierarchy eh ON e.manager_id = eh.id) " +
+                                 "SELECT * FROM employee_hierarchy ORDER BY level, name";
+                    try (Statement stmt = conn.createStatement();
+                         ResultSet rs = stmt.executeQuery(sql)) {
+                        while (rs.next()) {
+                            System.out.printf("Level %d | %s (ID: %d)%n",
+                                    rs.getInt("level"),
+                                    rs.getString("name"),
+                                    rs.getInt("id"));
+                        }
+                    }
+                } else if (choice.equals("4")) {
+                    System.out.println("Goodbye!");
+                    break;
+                } else {
+                    System.out.println("Invalid choice.");
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Database error: " + e.getMessage());
+        }
+    }
+}
