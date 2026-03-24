@@ -56,13 +56,5 @@ public class AnalyticsCLI {
                                  "SELECT e.id, e.name, e.manager_id, eh.level + 1 " +
                                  "FROM employees e JOIN employee_hierarchy eh ON e.manager_id = eh.id) " +
                                  "SELECT * FROM employee_hierarchy ORDER BY level, name";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("Level %d | %s (ID: %d)%n",
-                                    rs.getInt("level"),
-                                    rs.getString("name"),
-                                    rs.getInt("id"));
-                        }
-                    }
+
 
