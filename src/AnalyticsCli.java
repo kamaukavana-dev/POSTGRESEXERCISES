@@ -37,24 +37,6 @@ public class AnalyticsCLI {
                         stmt.executeUpdate();
                         System.out.println("Employee added!");
                     }
-                } else if (choice.equals("2")) {
-                    String sql = "SELECT id, name, manager_id FROM employees ORDER BY id";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | Manager: %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("name"),
-                                    rs.getObject("manager_id"));
-                        }
-                    }
-                } else if (choice.equals("3")) {
-                    String sql = "WITH RECURSIVE employee_hierarchy AS (" +
-                                 "SELECT id, name, manager_id, 1 AS level " +
-                                 "FROM employees WHERE manager_id IS NULL " +
-                                 "UNION ALL " +
-                                 "SELECT e.id, e.name, e.manager_id, eh.level + 1 " +
-                                 "FROM employees e JOIN employee_hierarchy eh ON e.manager_id = eh.id) " +
-                                 "SELECT * FROM employee_hierarchy ORDER BY level, name";
+
 
 
