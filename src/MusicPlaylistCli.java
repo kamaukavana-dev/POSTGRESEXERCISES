@@ -10,15 +10,7 @@ public class MusicPlaylistCLI {
         try (Connection conn = DriverManager.getConnection(url, user, password);
              Scanner scanner = new Scanner(System.in)) {
 
-            while (true) {
-                System.out.println("\n--- MusicPlaylistCLI ---");
-                System.out.println("1. Add Playlist");
-                System.out.println("2. Add Song to Playlist");
-                System.out.println("3. List Playlists");
-                System.out.println("4. List Songs in Playlist");
-                System.out.println("5. Exit");
-                System.out.print("Choose: ");
-                String choice = scanner.nextLine();
+
 
 
 
