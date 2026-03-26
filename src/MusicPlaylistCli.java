@@ -63,12 +63,6 @@ public class MusicPlaylistCLI {
                                     rs.getTimestamp("created_at"));
                         }
                     }
-                } else if (choice.equals("4")) {
-                    System.out.print("Playlist ID: ");
-                    int playlistId = Integer.parseInt(scanner.nextLine());
-                    String sql = "SELECT id, title, artist, duration FROM songs WHERE playlist_id = ? ORDER BY title";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, playlistId);
-                        ResultSet rs = stmt.executeQuery();
+
 
 
