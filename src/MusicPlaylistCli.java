@@ -30,16 +30,7 @@ public class MusicPlaylistCLI {
                         System.out.println("Playlist added!");
                     } catch (SQLException e) {
                         System.out.println("Error: " + e.getMessage());
-                    }
-                } else if (choice.equals("2")) {
-                    System.out.print("Song title: ");
-                    String title = scanner.nextLine();
-                    System.out.print("Artist: ");
-                    String artist = scanner.nextLine();
-                    System.out.print("Duration (seconds): ");
-                    int duration = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Playlist ID: ");
-                    int playlistId = Integer.parseInt(scanner.nextLine());
+
 
 
 
