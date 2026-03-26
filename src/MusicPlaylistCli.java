@@ -41,17 +41,7 @@ public class MusicPlaylistCLI {
                     System.out.print("Playlist ID: ");
                     int playlistId = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "INSERT INTO songs (title, artist, duration, playlist_id) VALUES (?, ?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, title);
-                        stmt.setString(2, artist);
-                        stmt.setInt(3, duration);
-                        stmt.setInt(4, playlistId);
-                        stmt.executeUpdate();
-                        System.out.println("Song added!");
-                    } catch (SQLException e) {
-                        System.out.println("Error: " + e.getMessage());
-                    }
+
 
 
 
