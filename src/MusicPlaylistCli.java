@@ -70,12 +70,5 @@ public class MusicPlaylistCLI {
                     try (PreparedStatement stmt = conn.prepareStatement(sql)) {
                         stmt.setInt(1, playlistId);
                         ResultSet rs = stmt.executeQuery();
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s | %d sec%n",
-                                    rs.getInt("id"),
-                                    rs.getString("title"),
-                                    rs.getString("artist"),
-                                    rs.getInt("duration"));
-                        }
-                    }
+
 
