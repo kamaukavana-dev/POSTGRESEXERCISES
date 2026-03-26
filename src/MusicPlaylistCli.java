@@ -52,17 +52,7 @@ public class MusicPlaylistCLI {
                     } catch (SQLException e) {
                         System.out.println("Error: " + e.getMessage());
                     }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT id, name, created_at FROM playlists ORDER BY created_at DESC";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("name"),
-                                    rs.getTimestamp("created_at"));
-                        }
-                    }
+
 
 
 
