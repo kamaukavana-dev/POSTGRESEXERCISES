@@ -47,15 +47,6 @@ public class AuditCLI {
                                     rs.getDouble("total_revenue"));
                         }
                     }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT * FROM monthly_sales ORDER BY month";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | Revenue: %.2f%n",
-                                    rs.getDate("month"),
-                                    rs.getDouble("revenue"));
-                        }
-                    }
+
 
 
