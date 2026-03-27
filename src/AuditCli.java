@@ -57,13 +57,5 @@ public class AuditCLI {
                                     rs.getDouble("revenue"));
                         }
                     }
-                } else if (choice.equals("4")) {
-                    String sql = "REFRESH MATERIALIZED VIEW monthly_sales";
-                    try (Statement stmt = conn.createStatement()) {
-                        stmt.executeUpdate(sql);
-                        System.out.println("Monthly sales view refreshed!");
-                    }
-                } else if (choice.equals("5")) {
-                    System.out.println("Goodbye!");
-                    break;
+
 
