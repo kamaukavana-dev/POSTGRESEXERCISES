@@ -36,17 +36,7 @@ public class AuditCLI {
                         stmt.executeUpdate();
                         System.out.println("Sale recorded!");
                     }
-                } else if (choice.equals("2")) {
-                    String sql = "SELECT * FROM sales_summary";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | Units: %d | Revenue: %.2f%n",
-                                    rs.getString("product"),
-                                    rs.getInt("total_units"),
-                                    rs.getDouble("total_revenue"));
-                        }
-                    }
+
 
 
 
