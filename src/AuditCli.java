@@ -28,14 +28,7 @@ public class AuditCLI {
                     System.out.print("Price: ");
                     double price = Double.parseDouble(scanner.nextLine());
 
-                    String sql = "INSERT INTO sales (product, quantity, price) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, product);
-                        stmt.setInt(2, qty);
-                        stmt.setDouble(3, price);
-                        stmt.executeUpdate();
-                        System.out.println("Sale recorded!");
-                    }
+
 
 
 
