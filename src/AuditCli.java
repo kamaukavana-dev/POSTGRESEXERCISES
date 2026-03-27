@@ -10,23 +10,7 @@ public class AuditCLI {
         try (Connection conn = DriverManager.getConnection(url, user, password);
              Scanner scanner = new Scanner(System.in)) {
 
-            while (true) {
-                System.out.println("\n--- AuditCLI ---");
-                System.out.println("1. Add Sale");
-                System.out.println("2. Show Sales Summary (View)");
-                System.out.println("3. Show Monthly Sales (Materialized View)");
-                System.out.println("4. Refresh Monthly Sales View");
-                System.out.println("5. Exit");
-                System.out.print("Choose: ");
-                String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Product: ");
-                    String product = scanner.nextLine();
-                    System.out.print("Quantity: ");
-                    int qty = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Price: ");
-                    double price = Double.parseDouble(scanner.nextLine());
 
 
 
