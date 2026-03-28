@@ -76,21 +76,5 @@ public class LibraryManagerCLI {
                                  "JOIN members m ON br.member_id = m.id " +
                                  "JOIN books b ON br.book_id = b.id " +
                                  "ORDER BY br.borrow_date DESC";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | %s | Borrowed: %s | Returned: %s%n",
-                                    rs.getString("name"),
-                                    rs.getString("title"),
-                                    rs.getDate("borrow_date"),
-                                    rs.getDate("return_date"));
-                        }
-                    }
-                } else if (choice.equals("6")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
+
 
