@@ -60,15 +60,7 @@ public class LibraryManagerCLI {
                         stmt.executeUpdate();
                         System.out.println("Book borrowed!");
                     }
-                } else if (choice.equals("4")) {
-                    System.out.print("Borrow Record ID: ");
-                    int recordId = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "UPDATE borrow_records SET return_date = CURRENT_DATE WHERE id = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, recordId);
-                        stmt.executeUpdate();
-                        System.out.println("Book returned!");
 
 
 
