@@ -53,13 +53,7 @@ public class LibraryManagerCLI {
                     System.out.print("Book ID: ");
                     int bookId = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "INSERT INTO borrow_records (member_id, book_id) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, memberId);
-                        stmt.setInt(2, bookId);
-                        stmt.executeUpdate();
-                        System.out.println("Book borrowed!");
-                    }
+
 
 
 
