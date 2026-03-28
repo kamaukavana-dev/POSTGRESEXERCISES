@@ -40,18 +40,6 @@ public class LibraryManagerCLI {
                     System.out.print("Author: ");
                     String author = scanner.nextLine();
 
-                    String sql = "INSERT INTO books (title, author) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, title);
-                        stmt.setString(2, author);
-                        stmt.executeUpdate();
-                        System.out.println("Book added!");
-                    }
-                } else if (choice.equals("3")) {
-                    System.out.print("Member ID: ");
-                    int memberId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Book ID: ");
-                    int bookId = Integer.parseInt(scanner.nextLine());
 
 
 
