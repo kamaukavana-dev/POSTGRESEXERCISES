@@ -27,18 +27,7 @@ public class LibraryManagerCLI {
                     System.out.print("Email: ");
                     String email = scanner.nextLine();
 
-                    String sql = "INSERT INTO members (name, email) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, name);
-                        stmt.setString(2, email);
-                        stmt.executeUpdate();
-                        System.out.println("Member added!");
-                    }
-                } else if (choice.equals("2")) {
-                    System.out.print("Book title: ");
-                    String title = scanner.nextLine();
-                    System.out.print("Author: ");
-                    String author = scanner.nextLine();
+
 
 
 
