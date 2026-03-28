@@ -69,12 +69,6 @@ public class LibraryManagerCLI {
                         stmt.setInt(1, recordId);
                         stmt.executeUpdate();
                         System.out.println("Book returned!");
-                    }
-                } else if (choice.equals("5")) {
-                    String sql = "SELECT m.name, b.title, br.borrow_date, br.return_date " +
-                                 "FROM borrow_records br " +
-                                 "JOIN members m ON br.member_id = m.id " +
-                                 "JOIN books b ON br.book_id = b.id " +
-                                 "ORDER BY br.borrow_date DESC";
+
 
 
