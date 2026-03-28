@@ -19,13 +19,7 @@ public class LibraryManagerCLI {
                 System.out.println("5. Show Borrow Records");
                 System.out.println("6. Exit");
                 System.out.print("Choose: ");
-                String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Member name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Email: ");
-                    String email = scanner.nextLine();
 
 
 
