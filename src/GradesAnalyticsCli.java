@@ -28,14 +28,7 @@ public class GradesAnalyticsCLI {
                     System.out.print("Score: ");
                     double score = Double.parseDouble(scanner.nextLine());
 
-                    String sql = "INSERT INTO student_grades (student_name, subject, score) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, student);
-                        stmt.setString(2, subject);
-                        stmt.setDouble(3, score);
-                        stmt.executeUpdate();
-                        System.out.println("Grade added!");
-                    }
+
 
 
 
