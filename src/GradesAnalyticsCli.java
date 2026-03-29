@@ -56,21 +56,5 @@ public class GradesAnalyticsCLI {
                                     rs.getDouble("avg_score"));
                         }
                     }
-                } else if (choice.equals("4")) {
-                    String sql = "SELECT subject, student_name, MAX(score) AS top_score FROM student_grades GROUP BY subject, student_name ORDER BY subject";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | %s | Top Score: %.2f%n",
-                                    rs.getString("subject"),
-                                    rs.getString("student_name"),
-                                    rs.getDouble("top_score"));
-                        }
-                    }
-                } else if (choice.equals("5")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
+
 
