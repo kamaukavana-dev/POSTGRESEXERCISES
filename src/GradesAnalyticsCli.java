@@ -46,15 +46,6 @@ public class GradesAnalyticsCLI {
                                     rs.getDouble("avg_score"));
                         }
                     }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT subject, AVG(score) AS avg_score FROM student_grades GROUP BY subject HAVING AVG(score) > 70";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | Average: %.2f%n",
-                                    rs.getString("subject"),
-                                    rs.getDouble("avg_score"));
-                        }
-                    }
+
 
 
