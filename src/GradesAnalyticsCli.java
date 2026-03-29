@@ -20,13 +20,7 @@ public class GradesAnalyticsCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Student name: ");
-                    String student = scanner.nextLine();
-                    System.out.print("Subject: ");
-                    String subject = scanner.nextLine();
-                    System.out.print("Score: ");
-                    double score = Double.parseDouble(scanner.nextLine());
+
 
 
 
