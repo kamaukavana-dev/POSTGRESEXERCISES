@@ -48,15 +48,4 @@ public class ExpenseTrackerCLI {
                                     rs.getDouble("total_spent"));
                         }
                     }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT DATE_TRUNC('month', expense_date) AS month, SUM(amount) AS total_spent " +
-                                 "FROM expenses GROUP BY month ORDER BY month";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | Total: %.2f%n",
-                                    rs.getDate("month"),
-                                    rs.getDouble("total_spent"));
-                        }
-                    }
 
