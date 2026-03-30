@@ -27,16 +27,6 @@ public class ExpenseTrackerCLI {
                     System.out.print("Amount: ");
                     double amount = Double.parseDouble(scanner.nextLine());
 
-                    String sql = "INSERT INTO expenses (category, amount) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, category);
-                        stmt.setDouble(2, amount);
-                        stmt.executeUpdate();
-                        conn.commit();
-                        System.out.println("Expense recorded!");
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-                    }
+
 
 
