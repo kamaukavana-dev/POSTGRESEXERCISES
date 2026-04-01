@@ -27,21 +27,7 @@ public class UserManagementCLI {
                     System.out.print("Role (admin/editor/viewer): ");
                     String role = scanner.nextLine();
 
-                    String sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, username);
-                        stmt.setString(2, pwd); // in real apps, hash this!
-                        stmt.setString(3, role);
-                        stmt.executeUpdate();
-                        System.out.println("User added!");
-                    } catch (SQLException e) {
-                        System.out.println("Error: " + e.getMessage());
-                    }
-                } else if (choice.equals("2")) {
-                    System.out.print("Username: ");
-                    String username = scanner.nextLine();
-                    System.out.print("Password: ");
-                    String pwd = scanner.nextLine();
+
 
 
 
