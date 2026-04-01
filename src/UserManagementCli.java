@@ -43,17 +43,6 @@ public class UserManagementCLI {
                     System.out.print("Password: ");
                     String pwd = scanner.nextLine();
 
-                    String sql = "SELECT role FROM users WHERE username = ? AND password = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, username);
-                        stmt.setString(2, pwd);
-                        ResultSet rs = stmt.executeQuery();
-                        if (rs.next()) {
-                            String role = rs.getString("role");
-                            System.out.println("Authenticated! Role: " + role);
-                        } else {
-                            System.out.println("Invalid credentials.");
-                        }
-                    }
+
 
 
