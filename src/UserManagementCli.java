@@ -55,22 +55,5 @@ public class UserManagementCLI {
                             System.out.println("Invalid credentials.");
                         }
                     }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT id, username, role FROM users ORDER BY id";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("username"),
-                                    rs.getString("role"));
-                        }
-                    }
-                } else if (choice.equals("4")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
+
 
