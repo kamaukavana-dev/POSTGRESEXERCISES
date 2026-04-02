@@ -12,31 +12,7 @@ public class TodoListCLI {
 
             conn.setAutoCommit(false); // manual transaction control
 
-            while (true) {
-                System.out.println("\n--- TodoListCLI ---");
-                System.out.println("1. Add Task");
-                System.out.println("2. List Pending Tasks");
-                System.out.println("3. Mark Task Complete");
-                System.out.println("4. Exit");
-                System.out.print("Choose: ");
-                String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Task description: ");
-                    String task = scanner.nextLine();
-                    System.out.print("Due date (YYYY-MM-DD): ");
-                    String dueDate = scanner.nextLine();
-
-                    String sql = "INSERT INTO todos (task, due_date) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, task);
-                        stmt.setDate(2, Date.valueOf(dueDate));
-                        stmt.executeUpdate();
-                        conn.commit();
-                        System.out.println("Task added!");
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
 
 
 
