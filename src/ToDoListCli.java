@@ -37,22 +37,7 @@ public class TodoListCLI {
                     } catch (SQLException e) {
                         conn.rollback();
                         System.out.println("Error: " + e.getMessage());
-                    }
-                } else if (choice.equals("2")) {
-                    String sql = "SELECT id, task, due_date, completed FROM todos WHERE completed = FALSE ORDER BY due_date";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | Due: %s | Completed: %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("task"),
-                                    rs.getDate("due_date"),
-                                    rs.getBoolean("completed"));
-                        }
-                    }
-                } else if (choice.equals("3")) {
-                    System.out.print("Task ID to mark complete: ");
-                    int id = Integer.parseInt(scanner.nextLine());
+
 
 
 
