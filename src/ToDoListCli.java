@@ -54,15 +54,6 @@ public class TodoListCLI {
                     System.out.print("Task ID to mark complete: ");
                     int id = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "UPDATE todos SET completed = TRUE WHERE id = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, id);
-                        stmt.executeUpdate();
-                        conn.commit();
-                        System.out.println("Task marked complete!");
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-                    }
+
 
 
