@@ -64,11 +64,5 @@ public class TodoListCLI {
                         conn.rollback();
                         System.out.println("Error: " + e.getMessage());
                     }
-                } else if (choice.equals("4")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
+
 
