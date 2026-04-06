@@ -63,12 +63,7 @@ public class FinalProjectCLI {
                     System.out.print("Customer ID: ");
                     int customerId = Integer.parseInt(scanner.nextLine());
 
-                    String sqlOrder = "INSERT INTO orders (customer_id) VALUES (?) RETURNING id";
-                    try (PreparedStatement stmtOrder = conn.prepareStatement(sqlOrder)) {
-                        stmtOrder.setInt(1, customerId);
-                        ResultSet rs = stmtOrder.executeQuery();
-                        rs.next();
-                        int orderId = rs.getInt("id");
+
 
 
 
