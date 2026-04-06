@@ -77,20 +77,7 @@ public class FinalProjectCLI {
                             System.out.print("Quantity: ");
                             int qty = Integer.parseInt(scanner.nextLine());
 
-                            String sqlItem = "INSERT INTO order_items (order_id, product_id, quantity) VALUES (?, ?, ?)";
-                            try (PreparedStatement stmtItem = conn.prepareStatement(sqlItem)) {
-                                stmtItem.setInt(1, orderId);
-                                stmtItem.setInt(2, productId);
-                                stmtItem.setInt(3, qty);
-                                stmtItem.executeUpdate();
-                            }
-                        }
-                        conn.commit();
-                        System.out.println("Order placed!");
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-                    }
+
 
 
 
