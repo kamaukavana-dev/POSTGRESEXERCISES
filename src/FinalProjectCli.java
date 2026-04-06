@@ -39,15 +39,7 @@ public class FinalProjectCLI {
                         conn.rollback();
                         System.out.println("Error: " + e.getMessage());
                     }
-                } else if (choice.equals("2")) {
-                    System.out.print("Product name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Price: ");
-                    double price = Double.parseDouble(scanner.nextLine());
-                    System.out.print("Stock: ");
-                    int stock = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "INSERT INTO products (name, price, stock) VALUES (?, ?, ?)";
 
 
 
