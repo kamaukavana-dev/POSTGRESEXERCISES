@@ -70,12 +70,7 @@ public class FinalProjectCLI {
                         rs.next();
                         int orderId = rs.getInt("id");
 
-                        while (true) {
-                            System.out.print("Product ID (or 0 to finish): ");
-                            int productId = Integer.parseInt(scanner.nextLine());
-                            if (productId == 0) break;
-                            System.out.print("Quantity: ");
-                            int qty = Integer.parseInt(scanner.nextLine());
+
 
 
 
