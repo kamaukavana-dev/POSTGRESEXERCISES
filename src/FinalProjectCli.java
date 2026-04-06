@@ -28,17 +28,7 @@ public class FinalProjectCLI {
                     System.out.print("Email: ");
                     String email = scanner.nextLine();
 
-                    String sql = "INSERT INTO customers (name, email) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, name);
-                        stmt.setString(2, email);
-                        stmt.executeUpdate();
-                        conn.commit();
-                        System.out.println("Customer added!");
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-                    }
+
 
 
 
