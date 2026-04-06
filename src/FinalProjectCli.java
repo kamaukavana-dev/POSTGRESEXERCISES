@@ -48,20 +48,7 @@ public class FinalProjectCLI {
                     int stock = Integer.parseInt(scanner.nextLine());
 
                     String sql = "INSERT INTO products (name, price, stock) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, name);
-                        stmt.setDouble(2, price);
-                        stmt.setInt(3, stock);
-                        stmt.executeUpdate();
-                        conn.commit();
-                        System.out.println("Product added!");
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-                    }
-                } else if (choice.equals("3")) {
-                    System.out.print("Customer ID: ");
-                    int customerId = Integer.parseInt(scanner.nextLine());
+
 
 
 
