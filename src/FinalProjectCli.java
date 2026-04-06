@@ -22,11 +22,7 @@ public class FinalProjectCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Customer name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Email: ");
-                    String email = scanner.nextLine();
+
 
 
 
