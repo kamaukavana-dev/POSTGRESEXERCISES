@@ -91,16 +91,6 @@ public class FinalProjectCLI {
                         conn.rollback();
                         System.out.println("Error: " + e.getMessage());
                     }
-                } else if (choice.equals("4")) {
-                    String sql = "SELECT * FROM sales_summary";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | Sold: %d | Revenue: %.2f%n",
-                                    rs.getString("product"),
-                                    rs.getInt("total_sold"),
-                                    rs.getDouble("revenue"));
-                        }
-                    }
+
 
 
