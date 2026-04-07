@@ -20,13 +20,7 @@ public class InventoryCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Product name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Stock: ");
-                    int stock = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Reorder level: ");
-                    int reorder = Integer.parseInt(scanner.nextLine());
+
 
 
 
