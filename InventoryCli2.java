@@ -36,19 +36,6 @@ public class InventoryCLI {
                         stmt.executeUpdate();
                         System.out.println("Product added!");
                     }
-                } else if (choice.equals("2")) {
-                    System.out.print("Product ID: ");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    System.out.print("New stock: ");
-                    int stock = Integer.parseInt(scanner.nextLine());
-
-                    String sql = "UPDATE inventory SET stock = ? WHERE id = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, stock);
-                        stmt.setInt(2, id);
-                        stmt.executeUpdate();
-                        System.out.println("Stock updated!");
-                    }
 
 
 
