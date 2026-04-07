@@ -67,19 +67,5 @@ public class InventoryCLI {
                             "ORDER BY r.created_at DESC";
                     try (Statement stmt = conn.createStatement();
                          ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("product_name"),
-                                    rs.getString("alert_message"),
-                                    rs.getTimestamp("created_at"));
-                        }
-                    }
-                } else if (choice.equals("5")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
+
 
