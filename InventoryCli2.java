@@ -61,11 +61,6 @@ public class InventoryCLI {
                                     rs.getInt("reorder_level"));
                         }
                     }
-                } else if (choice.equals("4")) {
-                    String sql = "SELECT r.id, i.product_name, r.alert_message, r.created_at " +
-                            "FROM restock_alerts r JOIN inventory i ON r.product_id = i.id " +
-                            "ORDER BY r.created_at DESC";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
+
 
 
