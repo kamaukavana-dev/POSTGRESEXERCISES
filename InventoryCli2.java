@@ -49,18 +49,7 @@ public class InventoryCLI {
                         stmt.executeUpdate();
                         System.out.println("Stock updated!");
                     }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT id, product_name, stock, reorder_level FROM inventory ORDER BY id";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | Stock: %d | Reorder Level: %d%n",
-                                    rs.getInt("id"),
-                                    rs.getString("product_name"),
-                                    rs.getInt("stock"),
-                                    rs.getInt("reorder_level"));
-                        }
-                    }
+
 
 
 
