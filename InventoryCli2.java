@@ -28,14 +28,7 @@ public class InventoryCLI {
                     System.out.print("Reorder level: ");
                     int reorder = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "INSERT INTO inventory (product_name, stock, reorder_level) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, name);
-                        stmt.setInt(2, stock);
-                        stmt.setInt(3, reorder);
-                        stmt.executeUpdate();
-                        System.out.println("Product added!");
-                    }
+
 
 
 
