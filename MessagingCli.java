@@ -51,12 +51,7 @@ public class MessagingCLI {
                     System.out.print("User2 ID: ");
                     int user2 = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "SELECT u1.username AS sender, u2.username AS receiver, m.content, m.sent_at " +
-                            "FROM messages m " +
-                            "JOIN users u1 ON m.sender_id = u1.id " +
-                            "JOIN users u2 ON m.receiver_id = u2.id " +
-                            "WHERE (u1.id = ? AND u2.id = ?) OR (u1.id = ? AND u2.id = ?) " +
-                            "ORDER BY m.sent_at";
+
 
 
 
