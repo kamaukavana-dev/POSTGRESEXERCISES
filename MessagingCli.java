@@ -45,11 +45,7 @@ public class MessagingCLI {
                         stmt.executeUpdate();
                         System.out.println("Message sent!");
                     }
-                } else if (choice.equals("3")) {
-                    System.out.print("User1 ID: ");
-                    int user1 = Integer.parseInt(scanner.nextLine());
-                    System.out.print("User2 ID: ");
-                    int user2 = Integer.parseInt(scanner.nextLine());
+
 
 
 
