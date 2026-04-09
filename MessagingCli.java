@@ -71,14 +71,6 @@ public class MessagingCLI {
                                     rs.getTimestamp("sent_at"));
                         }
                     }
-                } else if (choice.equals("4")) {
-                    System.out.print("User ID to delete: ");
-                    int id = Integer.parseInt(scanner.nextLine());
-                    String sql = "DELETE FROM users WHERE id = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, id);
-                        stmt.executeUpdate();
-                        System.out.println("User deleted (messages cascaded)!");
-                    }
+
 
 
