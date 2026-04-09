@@ -80,11 +80,5 @@ public class MessagingCLI {
                         stmt.executeUpdate();
                         System.out.println("User deleted (messages cascaded)!");
                     }
-                } else if (choice.equals("5")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
+
 
