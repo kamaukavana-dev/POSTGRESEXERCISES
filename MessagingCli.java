@@ -57,20 +57,7 @@ public class MessagingCLI {
                             "JOIN users u2 ON m.receiver_id = u2.id " +
                             "WHERE (u1.id = ? AND u2.id = ?) OR (u1.id = ? AND u2.id = ?) " +
                             "ORDER BY m.sent_at";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, user1);
-                        stmt.setInt(2, user2);
-                        stmt.setInt(3, user2);
-                        stmt.setInt(4, user1);
-                        ResultSet rs = stmt.executeQuery();
-                        while (rs.next()) {
-                            System.out.printf("%s -> %s | %s | %s%n",
-                                    rs.getString("sender"),
-                                    rs.getString("receiver"),
-                                    rs.getString("content"),
-                                    rs.getTimestamp("sent_at"));
-                        }
-                    }
+
 
 
 
