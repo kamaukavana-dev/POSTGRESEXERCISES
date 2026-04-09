@@ -29,13 +29,7 @@ public class MessagingCLI {
                         stmt.executeUpdate();
                         System.out.println("User added!");
                     }
-                } else if (choice.equals("2")) {
-                    System.out.print("Sender ID: ");
-                    int senderId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Receiver ID: ");
-                    int receiverId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Message: ");
-                    String content = scanner.nextLine();
+
 
 }
 
