@@ -37,14 +37,7 @@ public class MessagingCLI {
                     System.out.print("Message: ");
                     String content = scanner.nextLine();
 
-                    String sql = "INSERT INTO messages (sender_id, receiver_id, content) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, senderId);
-                        stmt.setInt(2, receiverId);
-                        stmt.setString(3, content);
-                        stmt.executeUpdate();
-                        System.out.println("Message sent!");
-                    }
+}
 
 
 
