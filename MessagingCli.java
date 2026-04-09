@@ -20,15 +20,6 @@ public class MessagingCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Username: ");
-                    String username = scanner.nextLine();
-                    String sql = "INSERT INTO users (username) VALUES (?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, username);
-                        stmt.executeUpdate();
-                        System.out.println("User added!");
-                    }
 
 
 }
