@@ -67,12 +67,5 @@ public class AttendanceCLI {
                             "ORDER BY a.attendance_date";
                     try (Statement stmt = conn.createStatement();
                          ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | %s | Date: %s | Present: %s%n",
-                                    rs.getString("name"),
-                                    rs.getString("subject"),
-                                    rs.getDate("attendance_date"),
-                                    rs.getBoolean("present"));
-                        }
-                    }
-}
+
+
