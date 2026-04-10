@@ -29,16 +29,7 @@ public class AttendanceCLI {
                         stmt.executeUpdate();
                         System.out.println("Student added!");
                     }
-                } else if (choice.equals("2")) {
-                    System.out.print("Class subject: ");
-                    String subject = scanner.nextLine();
-                    String sql = "INSERT INTO classes (subject) VALUES (?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, subject);
-                        stmt.executeUpdate();
-                        System.out.println("Class added!");
-                    }
-);
+
 
 
 
