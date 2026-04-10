@@ -20,15 +20,7 @@ public class AttendanceCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Student name: ");
-                    String name = scanner.nextLine();
-                    String sql = "INSERT INTO students (name) VALUES (?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, name);
-                        stmt.executeUpdate();
-                        System.out.println("Student added!");
-                    }
+
 
 
 
