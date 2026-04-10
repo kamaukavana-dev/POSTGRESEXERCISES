@@ -38,15 +38,7 @@ public class AttendanceCLI {
                         stmt.executeUpdate();
                         System.out.println("Class added!");
                     }
-                } else if (choice.equals("3")) {
-                    System.out.print("Student ID: ");
-                    int studentId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Class ID: ");
-                    int classId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Date (YYYY-MM-DD): ");
-                    String date = scanner.nextLine();
-                    System.out.print("Present (true/false): ");
-                    boolean present = Boolean.parseBoolean(scanner.nextLine());
+);
 
 
 
