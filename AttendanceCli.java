@@ -48,18 +48,7 @@ public class AttendanceCLI {
                     System.out.print("Present (true/false): ");
                     boolean present = Boolean.parseBoolean(scanner.nextLine());
 
-                    String sql = "INSERT INTO attendance (student_id, class_id, attendance_date, present) VALUES (?, ?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, studentId);
-                        stmt.setInt(2, classId);
-                        stmt.setDate(3, Date.valueOf(date));
-                        stmt.setBoolean(4, present);
-                        stmt.executeUpdate();
-                        System.out.println("Attendance recorded!");
-                    } catch (SQLException e) {
-                        System.out.println("Error: " + e.getMessage());
-                    }
-                } else if (choice.equals("4")) {
+
 
 
 
