@@ -60,12 +60,6 @@ public class AttendanceCLI {
                         System.out.println("Error: " + e.getMessage());
                     }
                 } else if (choice.equals("4")) {
-                    String sql = "SELECT s.name, c.subject, a.attendance_date, a.present " +
-                            "FROM attendance a " +
-                            "JOIN students s ON a.student_id = s.id " +
-                            "JOIN classes c ON a.class_id = c.id " +
-                            "ORDER BY a.attendance_date";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
+
 
 
