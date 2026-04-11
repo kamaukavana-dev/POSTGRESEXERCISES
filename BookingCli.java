@@ -43,21 +43,7 @@ public class BookingCLI {
                     String end = scanner.nextLine();
 
                     String sql = "INSERT INTO bookings (room_id, start_time, end_time) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, roomId);
-                        stmt.setTimestamp(2, Timestamp.valueOf(start.replace(" ", "T")));
-                        stmt.setTimestamp(3, Timestamp.valueOf(end.replace(" ", "T")));
-                        stmt.executeUpdate();
-                        conn.commit();
-                        System.out.println("Booking successful!");
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-                    }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT b.id, r.name, b.start_time, b.end_time " +
-                            "FROM bookings b JOIN rooms r ON b.room_id = r.id " +
-                            "ORDER BY b.start_time";
+
 
 
 
