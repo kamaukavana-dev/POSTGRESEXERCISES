@@ -21,28 +21,7 @@ public class BookingCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Room name: ");
-                    String name = scanner.nextLine();
-                    String sql = "INSERT INTO rooms (name) VALUES (?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, name);
-                        stmt.executeUpdate();
-                        conn.commit();
-                        System.out.println("Room added!");
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-                    }
-                } else if (choice.equals("2")) {
-                    System.out.print("Room ID: ");
-                    int roomId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Start time (YYYY-MM-DD HH:MM): ");
-                    String start = scanner.nextLine();
-                    System.out.print("End time (YYYY-MM-DD HH:MM): ");
-                    String end = scanner.nextLine();
 
-                    String sql = "INSERT INTO bookings (room_id, start_time, end_time) VALUES (?, ?, ?)";
 
 
 
