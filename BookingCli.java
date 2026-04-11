@@ -12,14 +12,6 @@ public class BookingCLI {
 
             conn.setAutoCommit(false); // transaction control
 
-            while (true) {
-                System.out.println("\n--- BookingCLI ---");
-                System.out.println("1. Add Room");
-                System.out.println("2. Book Room");
-                System.out.println("3. Show Bookings");
-                System.out.println("4. Exit");
-                System.out.print("Choose: ");
-                String choice = scanner.nextLine();
 
 
 
