@@ -68,11 +68,5 @@ public class BookingCLI {
                                     rs.getTimestamp("end_time"));
                         }
                     }
-                } else if (choice.equals("4")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
+
 
