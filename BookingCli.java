@@ -58,15 +58,6 @@ public class BookingCLI {
                     String sql = "SELECT b.id, r.name, b.start_time, b.end_time " +
                             "FROM bookings b JOIN rooms r ON b.room_id = r.id " +
                             "ORDER BY b.start_time";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s - %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("name"),
-                                    rs.getTimestamp("start_time"),
-                                    rs.getTimestamp("end_time"));
-                        }
-                    }
+
 
 
