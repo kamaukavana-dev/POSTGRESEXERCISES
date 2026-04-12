@@ -98,10 +98,7 @@ public class BankingCLI {
                         conn.rollback();
                         System.out.println("Error: " + e.getMessage());
                     }
-                } else if (choice.equals("4")) {
-                    String sql = "SELECT id, from_account, to_account, amount, created_at FROM transactions ORDER BY created_at DESC";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
+
 
 
 
