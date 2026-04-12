@@ -79,16 +79,7 @@ public class BankingCLI {
                                     addStmt.setInt(2, toId);
                                     addStmt.executeUpdate();
                                 }
-                                // Log transaction
-                                String logSql = "INSERT INTO transactions (from_account, to_account, amount) VALUES (?, ?, ?)";
-                                try (PreparedStatement logStmt = conn.prepareStatement(logSql)) {
-                                    logStmt.setInt(1, fromId);
-                                    logStmt.setInt(2, toId);
-                                    logStmt.setDouble(3, amount);
-                                    logStmt.executeUpdate();
-                                }
-                                conn.commit();
-                                System.out.println("Transfer successful!");
+
 
 
 
