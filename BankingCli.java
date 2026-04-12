@@ -89,15 +89,7 @@ public class BankingCLI {
                                 }
                                 conn.commit();
                                 System.out.println("Transfer successful!");
-                            } else {
-                                conn.rollback();
-                                System.out.println("Insufficient funds.");
-                            }
-                        }
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-                    }
+
 
 
 
