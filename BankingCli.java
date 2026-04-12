@@ -60,18 +60,7 @@ public class BankingCLI {
 
                     try {
                         // Check balance
-                        String checkSql = "SELECT balance FROM accounts WHERE id = ?";
-                        try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
-                            checkStmt.setInt(1, fromId);
-                            ResultSet rs = checkStmt.executeQuery();
-                            if (rs.next() && rs.getDouble("balance") >= amount) {
-                                // Deduct from sender
-                                String deductSql = "UPDATE accounts SET balance = balance - ? WHERE id = ?";
-                                try (PreparedStatement deductStmt = conn.prepareStatement(deductSql)) {
-                                    deductStmt.setDouble(1, amount);
-                                    deductStmt.setInt(2, fromId);
-                                    deductStmt.executeUpdate();
-                                }
+
 
 
 
