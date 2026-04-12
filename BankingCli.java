@@ -28,19 +28,7 @@ public class BankingCLI {
                     System.out.print("Initial balance: ");
                     double balance = Double.parseDouble(scanner.nextLine());
 
-                    String sql = "INSERT INTO accounts (owner, balance) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, owner);
-                        stmt.setDouble(2, balance);
-                        stmt.executeUpdate();
-                        conn.commit();
-                        System.out.println("Account created!");
-                    } catch (SQLException e) {
-                        conn.rollback();
-                        System.out.println("Error: " + e.getMessage());
-                    }
 
-                        // Check balance
 
 
 
