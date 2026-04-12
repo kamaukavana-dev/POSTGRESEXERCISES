@@ -50,15 +50,7 @@ public class BankingCLI {
                                     rs.getDouble("balance"));
                         }
                     }
-                } else if (choice.equals("3")) {
-                    System.out.print("From Account ID: ");
-                    int fromId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("To Account ID: ");
-                    int toId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Amount: ");
-                    double amount = Double.parseDouble(scanner.nextLine());
-
-                    try {
+                }
                         // Check balance
 
 
