@@ -72,13 +72,7 @@ public class BankingCLI {
                                     deductStmt.setInt(2, fromId);
                                     deductStmt.executeUpdate();
                                 }
-                                // Add to receiver
-                                String addSql = "UPDATE accounts SET balance = balance + ? WHERE id = ?";
-                                try (PreparedStatement addStmt = conn.prepareStatement(addSql)) {
-                                    addStmt.setDouble(1, amount);
-                                    addStmt.setInt(2, toId);
-                                    addStmt.executeUpdate();
-                                }
+
 
 
 
