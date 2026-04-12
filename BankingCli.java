@@ -39,18 +39,7 @@ public class BankingCLI {
                         conn.rollback();
                         System.out.println("Error: " + e.getMessage());
                     }
-                } else if (choice.equals("2")) {
-                    String sql = "SELECT id, owner, balance FROM accounts ORDER BY id";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | Balance: %.2f%n",
-                                    rs.getInt("id"),
-                                    rs.getString("owner"),
-                                    rs.getDouble("balance"));
-                        }
-                    }
-                }
+
                         // Check balance
 
 
