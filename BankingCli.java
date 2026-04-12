@@ -102,14 +102,6 @@ public class BankingCLI {
                     String sql = "SELECT id, from_account, to_account, amount, created_at FROM transactions ORDER BY created_at DESC";
                     try (Statement stmt = conn.createStatement();
                          ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | From: %d | To: %d | Amount: %.2f | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getInt("from_account"),
-                                    rs.getInt("to_account"),
-                                    rs.getDouble("amount"),
-                                    rs.getTimestamp("created_at"));
-                        }
-                    }
+
 
 
