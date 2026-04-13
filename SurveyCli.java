@@ -51,14 +51,7 @@ public class SurveyCLI {
                     String sql = "SELECT q.text, AVG(r.rating) AS avg_rating FROM responses r JOIN questions q ON r.question_id = q.id GROUP BY q.text";
                     try (Statement stmt = conn.createStatement();
                          ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%s | Average Rating: %.2f%n",
-                                    rs.getString("text"),
-                                    rs.getDouble("avg_rating"));
-                        }
-                    }
-                } else if (choice.equals("4")) {
-                    String sql = "SELECT q.text, AVG(r.rating) AS avg_rating, COUNT(*) AS total_responses FROM responses r JOIN questions q ON r.question_id = q.id GROUP BY q.text HAVING COUNT(*) >= 5";
+
 
 
 
