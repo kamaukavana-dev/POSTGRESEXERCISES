@@ -37,16 +37,7 @@ public class SurveyCLI {
                     System.out.print("Rating (1-5): ");
                     int rating = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "INSERT INTO responses (question_id, respondent, rating) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, qid);
-                        stmt.setString(2, respondent);
-                        stmt.setInt(3, rating);
-                        stmt.executeUpdate();
-                        System.out.println("Response recorded!");
-                    } catch (SQLException e) {
-                        System.out.println("Error: " + e.getMessage());
-                    }
+
 
 
 
