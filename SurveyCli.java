@@ -47,10 +47,7 @@ public class SurveyCLI {
                     } catch (SQLException e) {
                         System.out.println("Error: " + e.getMessage());
                     }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT q.text, AVG(r.rating) AS avg_rating FROM responses r JOIN questions q ON r.question_id = q.id GROUP BY q.text";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
+
 
 
 
