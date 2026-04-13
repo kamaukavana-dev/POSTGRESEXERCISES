@@ -29,13 +29,7 @@ public class SurveyCLI {
                         stmt.executeUpdate();
                         System.out.println("Question added!");
                     }
-                } else if (choice.equals("2")) {
-                    System.out.print("Question ID: ");
-                    int qid = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Respondent name: ");
-                    String respondent = scanner.nextLine();
-                    System.out.print("Rating (1-5): ");
-                    int rating = Integer.parseInt(scanner.nextLine());
+
 
 
 
