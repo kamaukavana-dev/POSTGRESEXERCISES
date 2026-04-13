@@ -68,11 +68,5 @@ public class SurveyCLI {
                                     rs.getInt("total_responses"));
                         }
                     }
-                } else if (choice.equals("5")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
+
 
