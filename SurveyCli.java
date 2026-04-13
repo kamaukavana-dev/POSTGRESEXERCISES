@@ -20,15 +20,7 @@ public class SurveyCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Question text: ");
-                    String text = scanner.nextLine();
-                    String sql = "INSERT INTO questions (text) VALUES (?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, text);
-                        stmt.executeUpdate();
-                        System.out.println("Question added!");
-                    }
+}
 
 
 
