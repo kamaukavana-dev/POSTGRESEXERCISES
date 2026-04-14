@@ -36,10 +36,7 @@ public class ConstraintsCLI {
                     } catch (SQLException e) {
                         System.out.println("Constraint violation: " + e.getMessage());
                     }
-                } else if (choice.equals("2")) {
-                    String sql = "SELECT id, name, email, age, enrolled FROM students ORDER BY id";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
+
 
 
 
