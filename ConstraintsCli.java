@@ -26,16 +26,7 @@ public class ConstraintsCLI {
                     System.out.print("Age: ");
                     int age = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "INSERT INTO students (name, email, age) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, name);
-                        stmt.setString(2, email);
-                        stmt.setInt(3, age);
-                        stmt.executeUpdate();
-                        System.out.println("Student added!");
-                    } catch (SQLException e) {
-                        System.out.println("Constraint violation: " + e.getMessage());
-                    }
+
 
 
 
