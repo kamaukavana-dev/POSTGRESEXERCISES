@@ -40,14 +40,6 @@ public class ConstraintsCLI {
                     String sql = "SELECT id, name, email, age, enrolled FROM students ORDER BY id";
                     try (Statement stmt = conn.createStatement();
                          ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s | Age: %d | Enrolled: %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("name"),
-                                    rs.getString("email"),
-                                    rs.getInt("age"),
-                                    rs.getBoolean("enrolled"));
-                        }
-                    }
+
 
 
