@@ -10,21 +10,7 @@ public class ConstraintsCLI {
         try (Connection conn = DriverManager.getConnection(url, user, password);
              Scanner scanner = new Scanner(System.in)) {
 
-            while (true) {
-                System.out.println("\n--- ConstraintsCLI ---");
-                System.out.println("1. Add Student");
-                System.out.println("2. List Students");
-                System.out.println("3. Exit");
-                System.out.print("Choose: ");
-                String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Email: ");
-                    String email = scanner.nextLine();
-                    System.out.print("Age: ");
-                    int age = Integer.parseInt(scanner.nextLine());
 
 
 
