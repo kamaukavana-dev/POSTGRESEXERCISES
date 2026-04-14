@@ -49,11 +49,5 @@ public class ConstraintsCLI {
                                     rs.getBoolean("enrolled"));
                         }
                     }
-                } else if (choice.equals("3")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
+
 
