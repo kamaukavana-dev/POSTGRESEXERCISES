@@ -44,7 +44,5 @@ class BankAccount{
         return LastName;
     }
 
-    public String getFirstName() {
-        return FirstName;
-    }
+
 }
