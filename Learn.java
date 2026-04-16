@@ -26,12 +26,3 @@ class Timer{
         System.out.println("Total Seconds :"+(hour+minute+second)+" seconds");
     }
 }
-public class Learn {
-    public static void main(String[] args) {
-        Timer timer1 = new Timer(1, 30, 45);
-        Timer timer2 = new Timer(2, 15, 30);
-
-
-
-    }
-}
