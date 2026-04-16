@@ -48,13 +48,3 @@ class BankAccount{
         return FirstName;
     }
 }
-public class Learn {
-    public static void main(String[] args) {
-        BankAccount account1 = new BankAccount("John", "Doe", 12345, 1000);
-        account1.getBalance();
-        account1.Deposit(500);
-        account1.getBalance();
-        account1.Withdraw(200);
-        account1.getBalance();
-    }
-}
