@@ -9,9 +9,4 @@ class arrays{
         return Arrays.copyOf(myArr, myArr.length); //copy out
     }
 }
-public class Learn {
-    public static void main(String[] args) {
-        int [] arr = {1,2,4};
-        arrays a = new arrays(arr);
 
-}
