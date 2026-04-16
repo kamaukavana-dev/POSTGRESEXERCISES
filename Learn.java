@@ -5,8 +5,6 @@ class arrays{
     arrays(int [] myArr){
         this.myArr = Arrays.copyOf(myArr, myArr.length); //copy in
     }
-    public int[] getMyArr(){
-        return Arrays.copyOf(myArr, myArr.length); //copy out
-    }
+
 }
 
