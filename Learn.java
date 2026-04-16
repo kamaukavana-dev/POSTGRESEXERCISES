@@ -18,11 +18,5 @@ class Timer{
     public void SetSecond(int Second){
         this.Second = Second;
     }
-    public void getTime(int hour,int minute,int second){
-        hour = Hour * 120;
-        minute = Minute * 60;
-        second = Second;
-        System.out.println("Hours:"+Hour +"  ||  Minutes: "+Minute+"  ||  Seconds:"+Second);
-        System.out.println("Total Seconds :"+(hour+minute+second)+" seconds");
-    }
+
 }
