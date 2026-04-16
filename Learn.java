@@ -14,7 +14,5 @@ public  class Learn {
     public static void main(String[] args) {
         Calendar calendar = Calendar.valueOf("Month");
         System.out.println("Calendar: " + calendar);
-        Days days = Days.valueOf("Monday");
-        System.out.println("Days: " + days);
-    }
+
 }
