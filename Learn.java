@@ -9,6 +9,30 @@ class Timer{
         this.Second = Second;
     }
 
+    public void SetHour(int Hour){
+        this.Hour = Hour;
+    }
+    public void SetMinute(int Minute){
+        this.Minute = Minute;
+    }
+    public void SetSecond(int Second){
+        this.Second = Second;
+    }
+    public void getTime(int hour,int minute,int second){
+        hour = Hour * 120;
+        minute = Minute * 60;
+        second = Second;
+        System.out.println("Hours:"+Hour +"  ||  Minutes: "+Minute+"  ||  Seconds:"+Second);
+        System.out.println("Total Seconds :"+(hour+minute+second)+" seconds");
+    }
+}
+public class Learn {
+    public static void main(String[] args) {
+        Timer timer1 = new Timer(1, 30, 45);
+        Timer timer2 = new Timer(2, 15, 30);
 
+        timer1.getTime(0, 0, 0);
+        timer2.getTime(0, 0, 0);
 
+    }
 }
