@@ -31,10 +31,7 @@ class BankAccount{
         return Balance;
     }
 
-    public int getBalance() {
-        System.out.println("Current balance: " + Balance);
-        return  Balance;
-    }
+
 
 
 
