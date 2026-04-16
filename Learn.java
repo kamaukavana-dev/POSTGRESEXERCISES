@@ -36,9 +36,7 @@ class BankAccount{
         return  Balance;
     }
 
-    public int getAccountNumber() {
-        return AccountNumber;
-    }
+
 
 
 
