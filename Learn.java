@@ -16,9 +16,5 @@ public  class Learn {
         System.out.println("Calendar: " + calendar);
         Days days = Days.valueOf("Monday");
         System.out.println("Days: " + days);
-        Months months = Months.valueOf("January");
-        System.out.println("Months: " + months);
-        Hours hours = Hours.valueOf("One");
-        System.out.println("Hours: " + hours);
     }
 }
