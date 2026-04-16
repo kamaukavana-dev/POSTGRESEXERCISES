@@ -9,14 +9,6 @@ class Timer{
         this.Second = Second;
     }
 
-    public void SetHour(int Hour){
-        this.Hour = Hour;
-    }
-    public void SetMinute(int Minute){
-        this.Minute = Minute;
-    }
-    public void SetSecond(int Second){
-        this.Second = Second;
-    }
+
 
 }
