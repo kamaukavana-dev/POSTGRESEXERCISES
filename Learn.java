@@ -13,8 +13,5 @@ public class Learn {
     public static void main(String[] args) {
         int [] arr = {1,2,4};
         arrays a = new arrays(arr);
-        int [] copyArr = a.getMyArr();
-        copyArr[0] = 99; // modify the copy
-        System.out.println("Original array from class: " + Arrays.toString(a.getMyArr())); // should print [1,2,3]
-    }
+
 }
