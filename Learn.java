@@ -12,24 +12,7 @@ class BankAccount{
         this.Balance = balance;
     }
     //setters
-    public void SetFirstName(String firstName){
-        this.FirstName = firstName;
-    }
-    public void SetLastname(String lastName){
-        this.LastName = lastName;
-    }
-    public int Deposit(int amount){
-        if(amount>0){
-            Balance += amount;
-        }
-        return Balance;
-    }
-    public int Withdraw(int amount){
-        if(amount>0 && amount<Balance){
-            Balance -= amount;
-        }
-        return Balance;
-    }
+
 
 
 
