@@ -10,9 +10,3 @@ enum Days {
     One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Eleven, Twelve;
 }
 
-public  class Learn {
-    public static void main(String[] args) {
-        Calendar calendar = Calendar.valueOf("Month");
-        System.out.println("Calendar: " + calendar);
-
-}
