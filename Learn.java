@@ -10,8 +10,6 @@ class Triangle{
         this.Base = Base;
         this.Height = height;
     }
-    public double getArea(){
-        return Base * Height * 0.5;
-    }
+
 }
 
