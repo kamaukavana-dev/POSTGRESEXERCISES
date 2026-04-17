@@ -20,13 +20,7 @@ public class ApiCli {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Username: ");
-                    String username = scanner.nextLine();
-                    System.out.print("Password: ");
-                    String pwd = scanner.nextLine();
-                    System.out.print("Role (admin/editor/viewer): ");
-                    String role = scanner.nextLine();
+
 
 
 
