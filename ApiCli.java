@@ -53,11 +53,7 @@ public class ApiCli {
                             System.out.println("Invalid credentials.");
                         }
                     }
-                } else if (choice.equals("3")) {
-                    System.out.print("User ID: ");
-                    int userId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Action (create/read/update/delete): ");
-                    String action = scanner.nextLine();
+
 
 
 
