@@ -42,17 +42,7 @@ public class ApiCli {
                     System.out.print("Password: ");
                     String pwd = scanner.nextLine();
 
-                    String sql = "SELECT id, role FROM api_users WHERE username = ? AND password = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, username);
-                        stmt.setString(2, pwd);
-                        ResultSet rs = stmt.executeQuery();
-                        if (rs.next()) {
-                            System.out.println("Authenticated! Role: " + rs.getString("role"));
-                        } else {
-                            System.out.println("Invalid credentials.");
-                        }
-                    }
+
 
 
 
