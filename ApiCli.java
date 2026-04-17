@@ -36,11 +36,7 @@ public class ApiCli {
                         stmt.executeUpdate();
                         System.out.println("User registered!");
                     }
-                } else if (choice.equals("2")) {
-                    System.out.print("Username: ");
-                    String username = scanner.nextLine();
-                    System.out.print("Password: ");
-                    String pwd = scanner.nextLine();
+                }
 
 
 
