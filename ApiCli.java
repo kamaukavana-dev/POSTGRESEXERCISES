@@ -80,12 +80,5 @@ public class ApiCli {
                                     rs.getTimestamp("timestamp"));
                         }
                     }
-                } else if (choice.equals("5")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
-        }
+
 }
