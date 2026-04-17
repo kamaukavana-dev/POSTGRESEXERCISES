@@ -28,15 +28,7 @@ public class ApiCli {
                     System.out.print("Role (admin/editor/viewer): ");
                     String role = scanner.nextLine();
 
-                    String sql = "INSERT INTO api_users (username, password, role) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, username);
-                        stmt.setString(2, pwd); // hash in real apps
-                        stmt.setString(3, role);
-                        stmt.executeUpdate();
-                        System.out.println("User registered!");
-                    }
-                }
+
 
 
 
