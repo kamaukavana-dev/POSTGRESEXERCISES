@@ -66,11 +66,6 @@ public class ApiCli {
                         stmt.executeUpdate();
                         System.out.println("Action logged!");
                     }
-                } else if (choice.equals("4")) {
-                    String sql = "SELECT l.id, u.username, l.action, l.timestamp " +
-                            "FROM api_logs l JOIN api_users u ON l.user_id = u.id " +
-                            "ORDER BY l.timestamp DESC";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
+
 
 
