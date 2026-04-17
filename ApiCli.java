@@ -72,13 +72,5 @@ public class ApiCli {
                             "ORDER BY l.timestamp DESC";
                     try (Statement stmt = conn.createStatement();
                          ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("username"),
-                                    rs.getString("action"),
-                                    rs.getTimestamp("timestamp"));
-                        }
-                    }
 
-}
+
