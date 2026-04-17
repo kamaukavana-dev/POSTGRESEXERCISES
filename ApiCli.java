@@ -59,13 +59,7 @@ public class ApiCli {
                     System.out.print("Action (create/read/update/delete): ");
                     String action = scanner.nextLine();
 
-                    String sql = "INSERT INTO api_logs (user_id, action) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, userId);
-                        stmt.setString(2, action);
-                        stmt.executeUpdate();
-                        System.out.println("Action logged!");
-                    }
+
 
 
 
