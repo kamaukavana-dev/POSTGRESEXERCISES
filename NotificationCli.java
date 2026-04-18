@@ -19,13 +19,7 @@ public class NotificationCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Recipient (phone/email): ");
-                    String recipient = scanner.nextLine();
-                    System.out.print("Channel (sms/email/whatsapp): ");
-                    String channel = scanner.nextLine();
-                    System.out.print("Message: ");
-                    String message = scanner.nextLine();
+
 
 
 
