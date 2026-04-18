@@ -27,14 +27,7 @@ public class NotificationCLI {
                     System.out.print("Message: ");
                     String message = scanner.nextLine();
 
-                    String sql = "INSERT INTO notifications (recipient, channel, message) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, recipient);
-                        stmt.setString(2, channel);
-                        stmt.setString(3, message);
-                        stmt.executeUpdate();
-                        System.out.println("Notification created!");
-                    }
+
 
 
 
