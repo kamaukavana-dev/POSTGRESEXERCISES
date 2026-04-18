@@ -70,11 +70,5 @@ public class NotificationCLI {
                                     rs.getTimestamp("created_at"));
                         }
                     }
-                } else if (choice.equals("4")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
+
 
