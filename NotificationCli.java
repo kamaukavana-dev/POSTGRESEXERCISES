@@ -60,15 +60,6 @@ public class NotificationCLI {
                     String sql = "SELECT id, recipient, channel, message, sent, created_at FROM notifications ORDER BY created_at DESC";
                     try (Statement stmt = conn.createStatement();
                          ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | %s | %s | Sent: %s | %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("recipient"),
-                                    rs.getString("channel"),
-                                    rs.getString("message"),
-                                    rs.getBoolean("sent"),
-                                    rs.getTimestamp("created_at"));
-                        }
-                    }
+
 
 
