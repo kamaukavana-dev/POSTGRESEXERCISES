@@ -11,11 +11,6 @@ class Dog extends Animal {
     }
 }
 
-class Puppy extends Dog {
-    public Puppy() {
-        super();
-        System.out.println("Puppy constructor");
-    }
-}
+
 
 
