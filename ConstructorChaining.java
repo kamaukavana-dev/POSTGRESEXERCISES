@@ -18,9 +18,4 @@ class Puppy extends Dog {
     }
 }
 
-public class ConstructorChaining {
-    public static void main(String[] args) {
-        Puppy p = new Puppy();
-    }
 
-}
