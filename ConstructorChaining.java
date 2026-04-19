@@ -4,12 +4,7 @@ class Animal {
     }
 }
 
-class Dog extends Animal {
-    public Dog() {
-         // Automatically inserted by Java if omitted
-        System.out.println("Dog constructor");
-    }
-}
+
 
 
 
