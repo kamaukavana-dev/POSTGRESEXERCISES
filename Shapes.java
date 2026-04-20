@@ -31,11 +31,7 @@ class Circle extends Shape {
         return Math.PI * radius * radius;
     }
 
-    @Override
-    public String toString() {
-        return "Circle = [ color='" + getColor() + "', radius=" + radius + ", area=" + getArea() + " ]";
-    }
-}
+
 
 
 
