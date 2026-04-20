@@ -51,11 +51,7 @@ class Rectangle extends Shape {
         return width * height;
     }
 
-    @Override
-    public String toString() {
-        return "Rectangle= [ color='" + getColor() + "', width=" + width
-                + ", height=" + height + ", area=" + getArea() + " ]";
-    }
+
 
 }
 
