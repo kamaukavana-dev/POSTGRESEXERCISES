@@ -58,12 +58,5 @@ class Rectangle extends Shape {
     }
 
 }
-public class Shapes {
-    public static void main(String[] args) {
-        Shape circle = new Circle("Red", 7.0);
-        Shape rectangle = new Rectangle("Blue", 4.0, 6.0);
 
-        System.out.println(circle);
-        System.out.println(rectangle);
-    }
 }
