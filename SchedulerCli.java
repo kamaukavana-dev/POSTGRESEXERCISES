@@ -61,12 +61,7 @@ public class SchedulerCLI {
                     System.out.print("Task ID to mark complete: ");
                     int id = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "UPDATE scheduled_tasks SET completed = TRUE WHERE id = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, id);
-                        stmt.executeUpdate();
-                        System.out.println("Task marked complete!");
-                    }
+
 
 
 }
