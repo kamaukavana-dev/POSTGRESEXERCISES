@@ -20,11 +20,7 @@ public class SchedulerCLI {
                 System.out.print("Choose: ");
                 String choice = scanner.nextLine();
 
-                if (choice.equals("1")) {
-                    System.out.print("Task description: ");
-                    String task = scanner.nextLine();
-                    System.out.print("Run at (YYYY-MM-DD HH:MM): ");
-                    String runAt = scanner.nextLine();
+
 
 
 
