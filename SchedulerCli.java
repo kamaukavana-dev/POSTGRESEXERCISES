@@ -26,16 +26,7 @@ public class SchedulerCLI {
                     System.out.print("Run at (YYYY-MM-DD HH:MM): ");
                     String runAt = scanner.nextLine();
 
-                    String sql = "INSERT INTO scheduled_tasks (task, run_at) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, task);
-                        stmt.setTimestamp(2, Timestamp.valueOf(runAt.replace(" ", "T")));
-                        stmt.executeUpdate();
-                        System.out.println("Task scheduled!");
-                    } catch (SQLException e) {
-                        System.out.println("Error: " + e.getMessage());
-                    }
-                } else if (choice.equals("2")) {
+
 
 
 
