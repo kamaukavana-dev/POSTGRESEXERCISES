@@ -36,17 +36,7 @@ public class SchedulerCLI {
                         System.out.println("Error: " + e.getMessage());
                     }
                 } else if (choice.equals("2")) {
-                    String sql = "SELECT id, task, run_at FROM scheduled_tasks WHERE completed = FALSE AND run_at > CURRENT_TIMESTAMP ORDER BY run_at";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | Scheduled for: %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("task"),
-                                    rs.getTimestamp("run_at"));
-                        }
-                    }
-                } else if (choice.equals("3")) {
+
 
 
 
