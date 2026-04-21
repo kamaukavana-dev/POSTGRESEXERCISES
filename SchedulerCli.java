@@ -47,19 +47,7 @@ public class SchedulerCLI {
                         }
                     }
                 } else if (choice.equals("3")) {
-                    String sql = "SELECT id, task, run_at FROM scheduled_tasks WHERE completed = FALSE AND run_at < CURRENT_TIMESTAMP ORDER BY run_at";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | Was due: %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("task"),
-                                    rs.getTimestamp("run_at"));
-                        }
-                    }
-                } else if (choice.equals("4")) {
-                    System.out.print("Task ID to mark complete: ");
-                    int id = Integer.parseInt(scanner.nextLine());
+
 
 
 
