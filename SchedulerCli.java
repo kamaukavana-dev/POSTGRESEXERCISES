@@ -74,8 +74,5 @@ public class SchedulerCLI {
                     System.out.println("Invalid choice.");
                 }
             }
-        } catch (SQLException e) {
-            System.out.println("Database error: " + e.getMessage());
-        }
-    }
+
 }
