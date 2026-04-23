@@ -68,17 +68,7 @@ public class RepoCLI {
                     System.out.print("Color: ");
                     String color = scanner.nextLine();
 
-                    String sql = "INSERT INTO labels (repo_id, label_name, color) VALUES (?, ?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, repoId);
-                        stmt.setString(2, label);
-                        stmt.setString(3, color);
-                        stmt.executeUpdate();
-                        System.out.println("Label added!");
-                    }
-                } else if (choice.equals("5")) {
-                    System.out.print("Repo ID: ");
-                    int repoId = Integer.parseInt(scanner.nextLine());
+
 
 
 
