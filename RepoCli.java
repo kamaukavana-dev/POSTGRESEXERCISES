@@ -53,20 +53,7 @@ public class RepoCLI {
                     System.out.print("Contributor name: ");
                     String contributor = scanner.nextLine();
 
-                    String sql = "INSERT INTO contributors (repo_id, contributor_name) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, repoId);
-                        stmt.setString(2, contributor);
-                        stmt.executeUpdate();
-                        System.out.println("Contributor added!");
-                    }
-                } else if (choice.equals("4")) {
-                    System.out.print("Repo ID: ");
-                    int repoId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Label name: ");
-                    String label = scanner.nextLine();
-                    System.out.print("Color: ");
-                    String color = scanner.nextLine();
+
 
 
 
