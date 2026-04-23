@@ -27,20 +27,7 @@ public class RepoCLI {
                     System.out.print("Description: ");
                     String desc = scanner.nextLine();
 
-                    String sql = "INSERT INTO repos (name, description) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, name);
-                        stmt.setString(2, desc);
-                        stmt.executeUpdate();
-                        System.out.println("Repo added!");
-                    }
-                } else if (choice.equals("2")) {
-                    System.out.print("Repo ID: ");
-                    int repoId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Branch name: ");
-                    String branch = scanner.nextLine();
 
-                    String sql = "INSERT INTO branches (repo_id, branch_name) VALUES (?, ?)";
 
 
 
