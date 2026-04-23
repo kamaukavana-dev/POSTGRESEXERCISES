@@ -41,17 +41,7 @@ public class RepoCLI {
                     String branch = scanner.nextLine();
 
                     String sql = "INSERT INTO branches (repo_id, branch_name) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, repoId);
-                        stmt.setString(2, branch);
-                        stmt.executeUpdate();
-                        System.out.println("Branch added!");
-                    }
-                } else if (choice.equals("3")) {
-                    System.out.print("Repo ID: ");
-                    int repoId = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Contributor name: ");
-                    String contributor = scanner.nextLine();
+
 
 
 
