@@ -86,25 +86,6 @@ public class RepoCLI {
                             "LEFT JOIN contributors c ON r.id = c.repo_id " +
                             "LEFT JOIN labels l ON r.id = l.repo_id " +
                             "WHERE r.id = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, repoId);
-                        ResultSet rs = stmt.executeQuery();
-                        while (rs.next()) {
-                            System.out.printf("Repo: %s | %s | Branch: %s | Contributor: %s | Label: %s (%s)%n",
-                                    rs.getString("name"),
-                                    rs.getString("description"),
-                                    rs.getString("branch_name"),
-                                    rs.getString("contributor_name"),
-                                    rs.getString("label_name"),
-                                    rs.getString("color"));
-                        }
-                    }
-                } else if (choice.equals("6")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
+
 
 }
