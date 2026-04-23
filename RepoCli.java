@@ -80,12 +80,6 @@ public class RepoCLI {
                     System.out.print("Repo ID: ");
                     int repoId = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "SELECT r.name, r.description, b.branch_name, c.contributor_name, l.label_name, l.color " +
-                            "FROM repos r " +
-                            "LEFT JOIN branches b ON r.id = b.repo_id " +
-                            "LEFT JOIN contributors c ON r.id = c.repo_id " +
-                            "LEFT JOIN labels l ON r.id = l.repo_id " +
-                            "WHERE r.id = ?";
 
 
 }
