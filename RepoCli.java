@@ -10,22 +10,7 @@ public class RepoCLI {
         try (Connection conn = DriverManager.getConnection(url, user, password);
              Scanner scanner = new Scanner(System.in)) {
 
-            while (true) {
-                System.out.println("\n--- RepoCLI ---");
-                System.out.println("1. Add Repo");
-                System.out.println("2. Add Branch");
-                System.out.println("3. Add Contributor");
-                System.out.println("4. Add Label");
-                System.out.println("5. Show Repo Details");
-                System.out.println("6. Exit");
-                System.out.print("Choose: ");
-                String choice = scanner.nextLine();
-
-                if (choice.equals("1")) {
-                    System.out.print("Repo name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Description: ");
-                    String desc = scanner.nextLine();
+);
 
 
 
