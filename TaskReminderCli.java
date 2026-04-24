@@ -81,8 +81,22 @@ public class TaskReminderCLI {
                             System.out.printf("NOTIFY: Task '%s' was due at %s%n", task, dueAt);
 
                             String updateSql = "UPDATE reminders SET notified = TRUE WHERE id = ?";
-
-
-
+                            try (PreparedStatement updateStmt = conn.prepareStatement(updateSql)) {
+                                updateStmt.setInt(1, id);
+                                updateStmt.executeUpdate();
+                            }
+                        }
+                        System.out.println("Notifications sent!");
+                    }
+                } else if (choice.equals("6")) {
+                    System.out.println("Goodbye!");
+                    break;
+                } else {
+                    System.out.println("Invalid choice.");
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Database error: " + e.getMessage());
+        }
     }
 }
