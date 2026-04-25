@@ -47,20 +47,7 @@ public class TaskReminderCLI {
                                     rs.getTimestamp("due_at"));
                         }
                     }
-                } else if (choice.equals("3")) {
-                    String sql = "SELECT id, task, due_at FROM reminders WHERE completed = FALSE AND due_at < CURRENT_TIMESTAMP ORDER BY due_at";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            System.out.printf("%d | %s | Overdue: %s%n",
-                                    rs.getInt("id"),
-                                    rs.getString("task"),
-                                    rs.getTimestamp("due_at"));
-                        }
-                    }
-                } else if (choice.equals("4")) {
-                    System.out.print("Reminder ID to mark complete: ");
-                    int id = Integer.parseInt(scanner.nextLine());
+
 
 
 
