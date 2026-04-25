@@ -69,15 +69,6 @@ public class TaskReminderCLI {
                         System.out.println("Reminder marked complete!");
                     }
                 } else if (choice.equals("5")) {
-                    String sql = "SELECT id, task, due_at FROM reminders WHERE notified = FALSE AND due_at <= CURRENT_TIMESTAMP AND completed = FALSE";
-                    try (Statement stmt = conn.createStatement();
-                         ResultSet rs = stmt.executeQuery(sql)) {
-                        while (rs.next()) {
-                            int id = rs.getInt("id");
-                            String task = rs.getString("task");
-                            Timestamp dueAt = rs.getTimestamp("due_at");
 
-                            // Simulate sending notification
-                            System.out.printf("NOTIFY: Task '%s' was due at %s%n", task, dueAt);
 
 
