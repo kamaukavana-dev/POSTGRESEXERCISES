@@ -88,15 +88,5 @@ public class TaskReminderCLI {
                         }
                         System.out.println("Notifications sent!");
                     }
-                } else if (choice.equals("6")) {
-                    System.out.println("Goodbye!");
-                    break;
-                } else {
-                    System.out.println("Invalid choice.");
-                }
-            }
-        } catch (SQLException e) {
-            System.out.println("Database error: " + e.getMessage());
-        }
-    }
+
 }
