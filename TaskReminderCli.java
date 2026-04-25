@@ -27,15 +27,7 @@ public class TaskReminderCLI {
                     System.out.print("Due at (YYYY-MM-DD HH:MM): ");
                     String dueAt = scanner.nextLine();
 
-                    String sql = "INSERT INTO reminders (task, due_at) VALUES (?, ?)";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setString(1, task);
-                        stmt.setTimestamp(2, Timestamp.valueOf(dueAt.replace(" ", "T")));
-                        stmt.executeUpdate();
-                        System.out.println("Reminder added!");
-                    } catch (SQLException e) {
-                        System.out.println("Error: " + e.getMessage());
-                    }
+
 
 
 
