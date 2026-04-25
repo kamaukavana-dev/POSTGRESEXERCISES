@@ -62,13 +62,6 @@ public class TaskReminderCLI {
                     System.out.print("Reminder ID to mark complete: ");
                     int id = Integer.parseInt(scanner.nextLine());
 
-                    String sql = "UPDATE reminders SET completed = TRUE WHERE id = ?";
-                    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                        stmt.setInt(1, id);
-                        stmt.executeUpdate();
-                        System.out.println("Reminder marked complete!");
-                    }
-                } else if (choice.equals("5")) {
 
 
 
